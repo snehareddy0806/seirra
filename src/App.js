@@ -17,7 +17,11 @@ function App() {
 
 
     const toggleSelections = (item) => {
-        setSelectedList([...selectedList, item])
+        if(selectedList.includes(item)) {
+            setSelectedList(selectedList.filter(listItem => listItem.id !== item.id))
+        } else {
+            setSelectedList([...selectedList, item])
+        }
     }
     return (
         <>
