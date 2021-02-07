@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import MarketList from "./components/marketList";
 import PersistentDrawer from './components/PersistentDrawer'
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core'
+import { Grid, Paper } from '@material-ui/core';
+import { mockresponse } from './input'
 
 const useStyles = makeStyles((theme) => ({
     grid: {
@@ -25,9 +26,11 @@ function App() {
     const classes = useStyles()
 
     useEffect(() => {
-        getEventList().then(eventRes => {
-            setEventsList(eventRes)
-        })
+        setEventsList(mockresponse)
+        //the service was blocked when served so hosting a mock repsonse 
+        // getEventList().then(eventRes => {
+        //     setEventsList(eventRes)
+        // })
     }, []) // get data only on page loads
 
 
