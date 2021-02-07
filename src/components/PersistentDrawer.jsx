@@ -15,6 +15,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Button from "@material-ui/core/Button";
 import ListItem from '@material-ui/core/ListItem';
 
 const drawerWidth = 240;
@@ -76,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawer({selectedList}) {
+export default function PersistentDrawer({ selectedList, onToggleSelections }) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -89,6 +90,10 @@ export default function PersistentDrawer({selectedList}) {
     setOpen(false);
   };
 
+  const handleToggleSelection = (item) => {
+    onToggleSelections(item)
+  }
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -100,7 +105,7 @@ export default function PersistentDrawer({selectedList}) {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            Persistent drawer
+            Betting Slip
           </Typography>
           <IconButton
             color="inherit"
@@ -136,9 +141,18 @@ export default function PersistentDrawer({selectedList}) {
         </div>
         <Divider />
         <List>
-            <ListItem>{selectedList.length}</ListItem>
+          {selectedList.length > 0 ? selectedList.map(item => {
+            return <ListItem key={item.id}>
+              <div>{item.name} to </div>
+              <div>{item.price}</div>
+              <Button variant="contained" color="secondary" onClick={() => handleToggleSelection(item)}>Delete</Button>
+            </ListItem>
+          })
+            :
+            <ListItem>Empty cart</ListItem>
+          }
         </List>
-    
+
       </Drawer>
     </div>
   );
