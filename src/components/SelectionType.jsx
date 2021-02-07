@@ -11,7 +11,7 @@ export default function SelectionType({ slectionType, onToggleSelections }) {
                         <Button
                             onClick={() => handleSelections(item)}
                             color={item.flag ? "primary" : "default"}
-                            variant="contained">
+                            >
                             {item.name}
                             {item.price}
                         </Button>
