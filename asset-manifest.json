@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/seirra/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/seirra/static/js/main.f5c03a30.chunk.js",
-    "main.js.map": "/seirra/static/js/main.f5c03a30.chunk.js.map",
+    "main.js": "/seirra/static/js/main.8c1a810e.chunk.js",
+    "main.js.map": "/seirra/static/js/main.8c1a810e.chunk.js.map",
     "runtime-main.js": "/seirra/static/js/runtime-main.172bfd6d.js",
     "runtime-main.js.map": "/seirra/static/js/runtime-main.172bfd6d.js.map",
     "static/js/2.956b5d78.chunk.js": "/seirra/static/js/2.956b5d78.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.172bfd6d.js",
     "static/js/2.956b5d78.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.f5c03a30.chunk.js"
+    "static/js/main.8c1a810e.chunk.js"
   ]
 }
