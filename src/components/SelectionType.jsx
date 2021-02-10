@@ -1,21 +1,19 @@
-import Button from "@material-ui/core/Button";
-export default function SelectionType({ slectionType, onToggleSelections }) {
-    const handleSelections = (item) => {
-        onToggleSelections(item)
-    }
+import { Chip } from "@material-ui/core";
+
+export default function SelectionChip({ slectionType, onToggleSelections }) {
+
     return (
         <>
             {slectionType.map((item) => {
                 return (
-                    <div key={item.id}>
-                        <Button
-                            onClick={() => handleSelections(item)}
-                            color={item.flag ? "primary" : "default"}
-                            >
-                            {item.name}
-                            {item.price}
-                        </Button>
-                    </div>
+                    <Chip
+                        label={`${item.name} | ${item.price}`}
+                        color={item.flag ? "primary" : "default"}
+                        style={{
+                            margin: 5
+                        }}
+                        onClick={() => onToggleSelections(item)}
+                    />
                 )
             })
             }

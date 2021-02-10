@@ -6,7 +6,7 @@ export default function MarketList({ marketItem, onToggleSelections }) {
         <>
             {marketItem.map((item) => {
                 return (
-                    <div item key={item.id}>
+                    <div key={item.id}>
                         {item.name}
                         <SelectionType slectionType={item.selections} onToggleSelections={onToggleSelections} />
                     </div>
