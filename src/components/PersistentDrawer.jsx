@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawer({ selectedList, onToggleSelections }) {
+export default function PersistentDrawer({ selectedList, onToggleSelections, isFallBackHeader }) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -105,7 +105,7 @@ export default function PersistentDrawer({ selectedList, onToggleSelections }) {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            Betting Slip
+            {`${isFallBackHeader ? 'FALL BACK Betting Slip' : 'Betting Slip'}`}
           </Typography>
           <IconButton
             color="inherit"
@@ -123,7 +123,9 @@ export default function PersistentDrawer({ selectedList, onToggleSelections }) {
           [classes.contentShift]: open,
         })}
       >
-        <div className={classes.drawerHeader} />
+        <div className={classes.drawerHeader}>
+          CART
+        </div>
       </main>
       <Drawer
         className={classes.drawer}
